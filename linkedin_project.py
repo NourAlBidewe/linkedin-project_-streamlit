@@ -77,8 +77,10 @@ with Education:
 
 with Industries: 
     st.header('Industries among Profiles')
+    ind= data_final.copy()
+    ind= ind[ind['industries']!= 'no industries']
     fig3=plt.figure(figsize=(10,5))
-    sns.countplot(data_final['industries'])
+    sns.countplot(ind['industries'])
     plt.xticks(rotation= 90)
 
     plt.title('Industry Types among user')
