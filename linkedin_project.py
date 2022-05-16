@@ -144,7 +144,7 @@ with Skills:
     fig4= plt.figure(figsize=(10,5))
     df= data_final.copy()
     df= df[df['start_month']!= 'no month avaialble']
-    data_final.start_month.value_counts().sort_values().plot(kind = 'barh', color=['aqua', 'cyan', 'cadetblue', 'lightskyblue', 'steelblue'])
+    df.start_month.value_counts().sort_values().plot(kind = 'barh', color=['aqua', 'cyan', 'cadetblue', 'lightskyblue', 'steelblue'])
     # data_final.start_month.value_counts().sort_values().plot(kind = 'barh')
 
     plt.title('Recruitment Season Month')
