@@ -98,7 +98,7 @@ with Industries:
     st.header('Company Names Among Selected Top Industries')
 
     fig10= plt.figure(figsize=(10,5))
-    industry1li= ['Higher Education', 'Computer Software','Banking', 'Internation Affairs', 'Civic & Social Organization', 'Information Technology and Services', 'Marketing and Advertising', 'Logistics and Supply Chain']
+    industry1li= ['Higher Education', 'Computer Software','Banking', 'International Affairs', 'Civic & Social Organization', 'Information Technology and Services', 'Marketing and Advertising', 'Logistics and Supply Chain']
 
     industry1= st.selectbox('Choose the industry:', options= industry1li)
     data_final[(data_final.industries==industry1)].companyName.value_counts().sort_values().plot(kind = 'barh', color= ['lightsteelblue', 'cornflowerblue', 'midnightblue', 'navy', 'mediumblue', 'blue'])
@@ -127,7 +127,7 @@ with Skills:
 
 
     st.header('Top Skills among top selected Industries')
-    industry_list= ['Higher Education', 'Computer Software','Banking', 'Internation Affairs', 'Civic & Social Organization', 'Information Technology and Services', 'Marketing and Advertising', 'Management Consulting', 'Logistics and Supply Chain']
+    industry_list= ['Higher Education', 'Computer Software','Banking', 'International Affairs', 'Civic & Social Organization', 'Information Technology and Services', 'Marketing and Advertising', 'Management Consulting', 'Logistics and Supply Chain']
     industry= st.selectbox('Choose the industry:', options= industry_list)
 
     fig8=plt.figure(figsize=(10,5))
