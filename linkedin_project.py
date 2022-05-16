@@ -87,18 +87,22 @@ with Industries:
 
     st.header('Top 10 Industries among our dataset')
     fig5=plt.figure(figsize=(10,5))
-    # data_final.industries.value_counts()[:10].sort_values().plot(kind = 'barh', color=['slateblue', 'mediumpurple', 'indigo', 'plum', 'purple'])
-    data_final.industries.value_counts()[:10].sort_values().plot(kind = 'barh')
+    
+    df_no_ind= data_final.copy()
+    df_no_ind= df_no_ind[df_no_ind['industries']!= 'no industries']
+    df_no_ind.industries.value_counts()[:10].sort_values().plot(kind = 'barh', color=['slateblue', 'mediumpurple', 'indigo', 'plum', 'purple'])
+    # df_no_ind.industries.value_counts()[:10].sort_values().plot(kind = 'barh')
     plt.title('Top 10 Industries among users')
     plt.show()
     st.pyplot(fig5)
+    st.header('Company Names Among Selected Top Industries')
 
     fig10= plt.figure(figsize=(10,5))
     industry1li= ['Higher Education', 'Computer Software','Banking', 'Internation Affairs', 'Civic & Social Organization', 'Information Technology and Services', 'Marketing and Advertising', 'Logistics and Supply Chain']
 
     industry1= st.selectbox('Choose the industry:', options= industry1li)
-    # data_final[(data_final.industries==industry1)].companyName.value_counts().sort_values().plot(kind = 'barh', color= ['lightsteelblue', 'cornflowerblue', 'midnightblue', 'navy', 'mediumblue', 'blue'])
-    data_final[(data_final.industries==industry1)].companyName.value_counts().sort_values().plot(kind = 'barh')
+    data_final[(data_final.industries==industry1)].companyName.value_counts().sort_values().plot(kind = 'barh', color= ['lightsteelblue', 'cornflowerblue', 'midnightblue', 'navy', 'mediumblue', 'blue'])
+    # data_final[(data_final.industries==industry1)].companyName.value_counts().sort_values().plot(kind = 'barh')
     plt.title(f'Top companies by {industry1} Industry')
     plt.show()
     st.pyplot(fig10)
@@ -112,14 +116,14 @@ with Skills:
 
     st.image(image, caption='skills types among users')
 
-    st.header('Top Skills among top selected Industries')
-    edu= data_final[['industries', 'skill_name']][(data_final['industries']=='Higher Education')]
-    fig7= plt.figure(figsize=(10,5))
+    # st.header('Top Skills among top selected Industries')
+    # edu= data_final[['industries', 'skill_name']][(data_final['industries']=='Higher Education')]
+    # fig7= plt.figure(figsize=(10,5))
     # edu.skill_name.value_counts()[:10].sort_values().plot(kind = 'barh', color= ['forestgreen', 'limegreen', 'darkgreen', 'springgreen', 'mediumspringgreen', 'mediumaquamarine'])
-    edu.skill_name.value_counts()[:10].sort_values().plot(kind = 'barh')
-    plt.title('Top Skills in Higher Education')
-    plt.show()
-    st.pyplot(fig7)
+    # # edu.skill_name.value_counts()[:10].sort_values().plot(kind = 'barh')
+    # plt.title('Top Skills in Higher Education')
+    # plt.show()
+    # st.pyplot(fig7)
 
 
     st.header('Top Skills among top selected Industries')
@@ -128,8 +132,8 @@ with Skills:
 
     fig8=plt.figure(figsize=(10,5))
     edu= data_final[['industries', 'skill_name']][(data_final['industries']== industry)]
-    # edu.skill_name.value_counts()[:10].sort_values().plot(kind = 'barh', color= ['peru', 'chocolate', 'bisque', 'olive', 'darkgoldenrod', 'khaki'])
-    edu.skill_name.value_counts()[:10].sort_values().plot(kind = 'barh')
+    edu.skill_name.value_counts()[:10].sort_values().plot(kind = 'barh', color= ['peru', 'chocolate', 'bisque', 'olive', 'darkgoldenrod', 'khaki'])
+    # edu.skill_name.value_counts()[:10].sort_values().plot(kind = 'barh')
 
     plt.title(f'Top Skills in {industry}')
     plt.show()
@@ -138,31 +142,11 @@ with Skills:
 
     st.header('Recruitment Seasons')
     fig4= plt.figure(figsize=(10,5))
-    # data_final.start_month.value_counts()[:9].sort_values().plot(kind = 'barh', color=['aqua', 'cyan', 'cadetblue', 'lightskyblue', 'steelblue'])
-    data_final.start_month.value_counts()[:9].sort_values().plot(kind = 'barh')
+    data_final.start_month.value_counts()[:9].sort_values().plot(kind = 'barh', color=['aqua', 'cyan', 'cadetblue', 'lightskyblue', 'steelblue'])
+    # data_final.start_month.value_counts()[:9].sort_values().plot(kind = 'barh')
 
     plt.title('Recruitment Season Month')
     plt.show()
     st.pyplot(fig4)
 
-    
-
-    
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
+  
