@@ -142,8 +142,10 @@ with Skills:
 
     st.header('Recruitment Seasons')
     fig4= plt.figure(figsize=(10,5))
-    data_final.start_month.value_counts()[:9].sort_values().plot(kind = 'barh', color=['aqua', 'cyan', 'cadetblue', 'lightskyblue', 'steelblue'])
-    # data_final.start_month.value_counts()[:9].sort_values().plot(kind = 'barh')
+    df= data_final.copy()
+    df= df[df['start_month']!= 'no month available']
+    data_final.start_month.value_counts().sort_values().plot(kind = 'barh', color=['aqua', 'cyan', 'cadetblue', 'lightskyblue', 'steelblue'])
+    # data_final.start_month.value_counts().sort_values().plot(kind = 'barh')
 
     plt.title('Recruitment Season Month')
     plt.show()
