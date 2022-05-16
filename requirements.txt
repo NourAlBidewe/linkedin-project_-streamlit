@@ -1,7 +1,7 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: win-64
-altair=4.2.0=pypi_0
+
 argon2-cffi=21.3.0=pypi_0
 argon2-cffi-bindings=21.2.0=pypi_0
 asttokens=2.0.5=pypi_0
@@ -80,8 +80,6 @@ python=3.10.0=h96c0403_3
 python-dateutil=2.8.2=pypi_0
 pytz=2022.1=pypi_0
 pytz-deprecation-shim=0.1.0.post0=pypi_0
-pywin32=303=pypi_0
-pywinpty=2.0.5=pypi_0
 pyzmq=22.3.0=pypi_0
 requests=2.27.1=pypi_0
 scipy=1.8.0=pypi_0
