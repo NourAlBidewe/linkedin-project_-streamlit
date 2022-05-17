@@ -43,7 +43,8 @@ with Education:
     cm= data_final['master_degree'].sum()
     cp= data_final['phd_degree'].sum()
     co= data_final['other_degree'].sum()
-    fig= plt.pie([cb, cm, cp, co], labels= ['bachelor_degree', 'master_degree', 'phd_degree','other_degree'], autopct='%1.1f%%')
+    fig= plt.figure(figsize=(10,5))
+    plt.pie([cb, cm, cp, co], labels= ['bachelor_degree', 'master_degree', 'phd_degree','other_degree'], autopct='%1.1f%%')
 #     fig= go.Figure(data=[go.Pie(labels=['bachelor', 'master', 'phd', 'other'], values=[cb, cm, cp,co], title='Degree Distribution')])
     st.plotly_chart(fig)
 
